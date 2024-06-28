@@ -22,9 +22,9 @@ The frequency analysis side of our paper requires the the (CAMeL Tools datasets)
 
 This repository is organized as follows:
 - data: includes all the data used throughout our paper to train and test different models.
-- data_preparation: includes scripts to 
+- data_preparation: includes scripts to prepare the raw data.
 - models: includes scripts to train and evaluate all of our single models. These scripts save the models and output their decisions on the test and development sets of our dataset.
-- tuning: includes notebooks used to tune certain parameters of the frequency, lex, and MLE models.
+- tuning_experiments: includes notebooks used in the development of the paper to tune certain parameters of the models used.
 - final_experiments: includes a Python notebook that visualizes all the results of our experiments.
 
 #### Reproducing our results
@@ -32,14 +32,16 @@ This repository is organized as follows:
 Our paper is organized in terms of *layered experiments* of different models. Therefore, we first prepare the data and individual models, and then combine them in the final experiments.
 
 We include three scripts to do this:
-1. ----- prepares all data needed.
-2. ----- saves models and results on our dataset.
-3. ----- visualizes the different layered models.
+1. `data_preparation/run_data_prep.sh` prepares all data needed.
+2. `models/train_and_test_models.sh` saves models and results on our dataset.
+3. ----- provides results for the different layered models.
 
 ### License
 This repo is available under the MIT license.
 
 ### Citation
+If you find the code or data in this repo helpful, please cite our paper:
+
 
 
 
