@@ -61,3 +61,56 @@ model = level_full_pipeline_eq_sized(10000)[0]
 with open('freq_binning_model.pkl', 'wb') as f:
   pickle.dump(model, f)
 
+# Get Dev and Test sets
+frag_dev = pd.read_csv('/content/drive/My Drive/capstone_data/bashar_data/capstone_data/splits/all_dev_aligned.csv')
+frag_test = pd.read_csv('/content/drive/My Drive/capstone_data/bashar_data/capstone_data/splits/all_test_aligned.csv')
+
+frag_dev = frag_dev[frag_dev.apply(lambda x: type(x['0']) == str, axis = 1)]
+frag_test = frag_test[frag_test.apply(lambda x: type(x['0']) == str, axis = 1)]
+
+
+# Generate decisions for DEV and TEST sets
+
+def get_rl_0(token, oov_level = 0):
+  return oov_level
+
+def levels_pipeline(fragment, decision_1, decision_2):
+  tokens = [t.split('#')[0] for t in fragment.split(' ')]
+  gt = [t.split('#')[1] for t in fragment.split(' ')]
+
+
+  # decision round 1:
+  levels = [decision_1(token) for token in tokens]
+
+  # decision round 2:
+  levels = [l if l != 0 else decision_2(t) for l, t in zip(levels, tokens)]
+
+  return {
+      'levels': levels,
+      'gts': gt,
+  }
+
+def get_rl_freq(token, oov_level = 0):
+    try:
+        return model[token]
+    except:
+        return oov_level
+    
+## Get lexicon decisions per fragment on the DEV and TEST sets
+  
+freq_binning_dev = [levels_pipeline(f, get_rl_freq, get_rl_0) for f in frag_dev['0']]
+freq_binning_test = [levels_pipeline(f, get_rl_freq, get_rl_0) for f in frag_test['0']]
+
+## Concatenate, have an array of wordwise decisions.
+
+freq_binning_decisions_dev = np.concatenate([e['levels'] for e in freq_binning_dev])
+freq_binning_decisions_test = np.concatenate([e['levels'] for e in freq_binning_test])
+
+## Save
+import pickle
+
+with open('freq_binning_decisions_dev.pkl', 'wb') as f:
+    pickle.dump(freq_binning_decisions_dev, f)
+with open('freq_binning_decisions_test.pkl', 'wb') as f:
+    pickle.dump(freq_binning_decisions_test, f)
+
