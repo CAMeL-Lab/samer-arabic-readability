@@ -42,5 +42,3 @@ This repo is available under the MIT license.
 If you find the code or data in this repo helpful, please cite our paper:
 
 
-
-### TODO  bert fragment transfer and WL pooling
