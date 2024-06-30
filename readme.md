@@ -4,7 +4,7 @@ This repository containes code and experiments to reproduce the results in our p
 
 ### Requirements
 
-The code for our experiments was written for Python >= 3.9, pytorch-lightning >= 2.2.2, transformers >= 4.35.2 and camel_tools >= 1.5.2. You can easily set up the environment using conda:
+The code for our experiments was written for Python >= 3.9, pytorch-lightning >= 2.2.2, transformers >= 4.29.0 and camel_tools >= 1.5.2. You can easily set up the environment using conda:
 
 ```
 conda create -n readability python=3.9
