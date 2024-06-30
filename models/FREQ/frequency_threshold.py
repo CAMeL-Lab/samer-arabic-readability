@@ -34,8 +34,9 @@ with open('freq_threshold_model.pkl', 'wb') as f:
   pickle.dump(words_and_levels, f)
 
 # Get Dev and Test sets
-frag_dev = pd.read_csv('/content/drive/My Drive/capstone_data/bashar_data/capstone_data/splits/all_dev_aligned.csv')
-frag_test = pd.read_csv('/content/drive/My Drive/capstone_data/bashar_data/capstone_data/splits/all_test_aligned.csv')
+
+frag_dev = pd.read_csv('../../data/all_dev_aligned.csv')
+frag_test = pd.read_csv('../../data/all_test_aligned.csv')
 
 frag_dev = frag_dev[frag_dev.apply(lambda x: type(x['0']) == str, axis = 1)]
 frag_test = frag_test[frag_test.apply(lambda x: type(x['0']) == str, axis = 1)]

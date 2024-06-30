@@ -4,11 +4,11 @@ import numpy as np
 import pandas as pd
 import pickle
 
-words_train = pd.read_csv('/content/drive/My Drive/capstone_data/bashar_data/capstone_data/splits/train_wordwise_clean.csv')
+words_train = pd.read_csv('../../data/train_wordwise_clean.csv')
 
 
-frag_dev = pd.read_csv('/content/drive/My Drive/capstone_data/bashar_data/capstone_data/splits/all_dev_aligned.csv')
-frag_test = pd.read_csv('/content/drive/My Drive/capstone_data/bashar_data/capstone_data/splits/all_test_aligned.csv')
+frag_dev = pd.read_csv('../../data/all_dev_aligned.csv')
+frag_test = pd.read_csv('../../data/all_test_aligned.csv')
 frag_dev = frag_dev[frag_dev.apply(lambda x: type(x['0']) == str, axis = 1)]
 frag_test = frag_test[frag_test.apply(lambda x: type(x['0']) == str, axis = 1)]
 

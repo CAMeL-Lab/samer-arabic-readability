@@ -3,7 +3,7 @@ from pathlib import Path
 
 # Obtain, from the SAMER Readability Lexicon table, a quick lemma lookup dictionary
 
-samer = pd.read_csv('../lexicon/SAMER-Readability-Lexicon.tsv',sep='\t')
+samer = pd.read_csv('../data/lexicon/SAMER-Readability-Lexicon.tsv',sep='\t')
 samer[["lemma", "pos"]] = samer['lemma#pos'].str.split("#", expand = True)
 lemmas = samer[['lemma', 'pos', 'readability (rounded average)']]
 

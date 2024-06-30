@@ -10,7 +10,7 @@ from camel_tools.morphology.database import MorphologyDB
 from camel_tools.morphology.analyzer import Analyzer
 from camel_tools.disambig.bert import BERTUnfactoredDisambiguator
 
-S31_DB_PATH = Path('/content/drive/My Drive/capstone_data/disambig_db/calima-msa-s31.db')
+S31_DB_PATH = Path('../../data/disambig_db/calima-msa-s31.db')
 S31_DB = MorphologyDB(S31_DB_PATH, 'a')
 S31_AN = Analyzer(S31_DB, 'NOAN_ALL', cache_size=100000)
 bert_disambig = BERTUnfactoredDisambiguator.pretrained('msa', top=1000, pretrained_cache = False)
@@ -19,14 +19,14 @@ bert_disambig._analyzer = S31_AN
 ## train data
 
 
-words_train = pd.read_csv('/content/drive/My Drive/capstone_data/bashar_data/capstone_data/splits/train_wordwise_clean.csv')
-words_dev = pd.read_csv('/content/drive/My Drive/capstone_data/bashar_data/capstone_data/splits/dev_wordwise_clean.csv')
-words_test = pd.read_csv('/content/drive/My Drive/capstone_data/bashar_data/capstone_data/splits/test_wordwise_clean.csv')
+words_train = pd.read_csv('../../data/train_wordwise_clean.csv')
+words_dev = pd.read_csv('../../data/dev_wordwise_clean.csv')
+words_test = pd.read_csv('../../data/test_wordwise_clean.csv')
 
 ## testing data in fragments
-frag_train = pd.read_csv('/content/drive/My Drive/capstone_data/bashar_data/capstone_data/splits/all_train_aligned.csv')
-frag_dev = pd.read_csv('/content/drive/My Drive/capstone_data/bashar_data/capstone_data/splits/all_dev_aligned.csv')
-frag_test = pd.read_csv('/content/drive/My Drive/capstone_data/bashar_data/capstone_data/splits/all_test_aligned.csv')
+frag_train = pd.read_csv('../../data/all_train_aligned.csv')
+frag_dev = pd.read_csv('../../data/all_dev_aligned.csv')
+frag_test = pd.read_csv('../../data/all_test_aligned.csv')
 
 frag_train = frag_train[frag_train.apply(lambda x: type(x['0']) == str, axis = 1)]
 frag_dev = frag_dev[frag_dev.apply(lambda x: type(x['0']) == str, axis = 1)]
@@ -44,7 +44,7 @@ frag_test['level'] = frag_test.apply(lambda row: get_level_of_frag(row['0']), ax
 
 # configure lexicon
 import pickle
-with open('/content/drive/My Drive/capstone_data/disambig_db/quick_lemma_lookup.pkl', 'rb') as f:
+with open('../data/lemma_db/quick_lemma_lookup.pkl', 'rb') as f:
     lemma_db = pickle.load(f)
 
 # default UNK level

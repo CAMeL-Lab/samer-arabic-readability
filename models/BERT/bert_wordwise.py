@@ -23,9 +23,9 @@ import numpy as np
 
 # Subword tokenization and labelling
 
-frag_train = pd.read_csv('../data/all_train_aligned.csv')
-frag_dev = pd.read_csv('../data/all_dev_aligned.csv')
-frag_test = pd.read_csv('../data/all_test_aligned.csv')
+frag_train = pd.read_csv('../../data/all_train_aligned.csv')
+frag_dev = pd.read_csv('../../data/all_dev_aligned.csv')
+frag_test = pd.read_csv('../../data/all_test_aligned.csv')
 
 
 frag_train = frag_train[frag_train.apply(lambda x: type(x['0']) == str, axis = 1)]

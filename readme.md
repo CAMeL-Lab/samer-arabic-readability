@@ -12,11 +12,9 @@ conda activate readability
 
 pip install -r requirements.txt
 
-### todo script rto do camel tools.
-
 ```
 
-Our paper also requires the (CAMeL Tools datasets)[https://github.com/CAMeL-Lab/camel_tools]. The script above will download these resources for you.
+Our paper also requires the (CAMeL Tools datasets)[https://github.com/CAMeL-Lab/camel_tools] for disambiguation. The script `data/setup_cameldata.sh` will set the datasets up for you.
 
 ### Experiments and Reproducibility
 
@@ -45,4 +43,4 @@ If you find the code or data in this repo helpful, please cite our paper:
 
 
 
-
+### TODO final test py, mle ensemble parameters py, bert fragment transfer and WL pooling
