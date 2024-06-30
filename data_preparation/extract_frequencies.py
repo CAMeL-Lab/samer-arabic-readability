@@ -17,7 +17,7 @@ def sum_numbers_by_word(directory):
                       word_sums[word] = word_sums.get(word,0) + number
     return word_sums
 
-directory_path = '../data/camelbert_stats/raw_clean_sents_simple_tok_split_digits_freq/'
+directory_path = '../data/freq/raw_clean_sents_simple_tok_split_digits_freq/'
 word_sums = sum_numbers_by_word(directory_path)
 
 all_freqs_msa = word_sums.items()
