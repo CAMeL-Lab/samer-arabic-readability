@@ -43,4 +43,4 @@ If you find the code or data in this repo helpful, please cite our paper:
 
 
 
-### TODO final test py, mle ensemble parameters py, bert fragment transfer and WL pooling
+### TODO  bert fragment transfer and WL pooling
