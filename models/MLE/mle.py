@@ -87,12 +87,6 @@ mle_85_test = [levels_pipeline(f, get_rl_mle_85, get_rl_0) for f in frag_test['0
 mle_0_dev = [levels_pipeline(f, get_rl_mle_0, get_rl_0) for f in frag_dev['0']]
 mle_0_test = [levels_pipeline(f, get_rl_mle_0, get_rl_0) for f in frag_test['0']]
 
-# save results
-mle_85_decisions_dev = np.concatenate([e['levels'] for e in mle_85_dev])
-mle_85_decisions_test = np.concatenate([e['levels'] for e in mle_85_test])
-
-mle_0_decisions_dev = np.concatenate([e['levels'] for e in mle_0_dev])
-mle_0_decisions_test = np.concatenate([e['levels'] for e in mle_0_test])
 
 # save the models
 with open('mle_85_model.pkl', 'wb') as f:
@@ -104,11 +98,11 @@ with open('mle_0_model.pkl', 'wb') as f:
 # save the decisions
 
 with open('mle_85_decisions_dev.pkl', 'wb') as f:
-    pickle.dump(mle_85_decisions_dev, f)
+    pickle.dump(mle_85_dev, f)
 with open('mle_85_decisions_test.pkl', 'wb') as f:
-    pickle.dump(mle_85_decisions_test, f)
+    pickle.dump(mle_85_test, f)
 
 with open('mle_0_decisions_dev.pkl', 'wb') as f:
-    pickle.dump(mle_0_decisions_dev, f)
+    pickle.dump(mle_0_dev, f)
 with open('mle_0_decisions_test.pkl', 'wb') as f:
-    pickle.dump(mle_0_decisions_test, f)
+    pickle.dump(mle_0_test, f)

@@ -101,16 +101,13 @@ def get_rl_freq(token, oov_level = 0):
 freq_binning_dev = [levels_pipeline(f, get_rl_freq, get_rl_0) for f in frag_dev['0']]
 freq_binning_test = [levels_pipeline(f, get_rl_freq, get_rl_0) for f in frag_test['0']]
 
-## Concatenate, have an array of wordwise decisions.
 
-freq_binning_decisions_dev = np.concatenate([e['levels'] for e in freq_binning_dev])
-freq_binning_decisions_test = np.concatenate([e['levels'] for e in freq_binning_test])
 
 ## Save
 import pickle
 
 with open('freq_binning_decisions_dev.pkl', 'wb') as f:
-    pickle.dump(freq_binning_decisions_dev, f)
+    pickle.dump(freq_binning_dev, f)
 with open('freq_binning_decisions_test.pkl', 'wb') as f:
-    pickle.dump(freq_binning_decisions_test, f)
+    pickle.dump(freq_binning_test, f)
 

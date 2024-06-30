@@ -1,0 +1,4 @@
+camel_tools == 1.5.2
+pytorch-lightning == 2.2.2
+transformers == 4.35.2
+Levenshtein == 0.25.1

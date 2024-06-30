@@ -73,15 +73,11 @@ def get_rl_freq(token, oov_level = 0):
 freq_threshold_dev = [levels_pipeline(f, get_rl_freq, get_rl_0) for f in frag_dev['0']]
 freq_threshold_test = [levels_pipeline(f, get_rl_freq, get_rl_0) for f in frag_test['0']]
 
-## Concatenate, have an array of wordwise decisions.
-
-freq_threshold_decisions_dev = np.concatenate([e['levels'] for e in freq_threshold_dev])
-freq_threshold_decisions_test = np.concatenate([e['levels'] for e in freq_threshold_test])
 
 ## Save
 import pickle
 
 with open('freq_threshold_decisions_dev.pkl', 'wb') as f:
-    pickle.dump(freq_threshold_decisions_dev, f)
+    pickle.dump(freq_threshold_dev, f)
 with open('freq_threshold_decisions_test.pkl', 'wb') as f:
-    pickle.dump(freq_threshold_decisions_test, f)
+    pickle.dump(freq_threshold_test, f)

@@ -155,16 +155,10 @@ def level_keep0(l):
 lexicon_dev = [levels_pipeline(f, get_rl_lexicon, get_rl_0, requires_disambig = True) for f in frag_dev['0']]
 lexicon_test = [levels_pipeline(f, get_rl_lexicon, get_rl_0, requires_disambig = True) for f in frag_test['0']]
 
-
-## Concatenate, have an array of wordwise decisions.
-
-lexicon_decisions_dev = [level_keep0(l) for l in np.concatenate([e['levels'] for e in lexicon_dev])]
-lexicon_decisions_test = [level_keep0(l) for l in np.concatenate([e['levels'] for e in lexicon_test])]
-
 ## Save
 import pickle
 
 with open('lexicon_decisions_dev.pkl', 'wb') as f:
-    pickle.dump(lexicon_decisions_dev, f)
+    pickle.dump(lexicon_dev, f)
 with open('lexicon_decisions_test.pkl', 'wb') as f:
-    pickle.dump(lexicon_decisions_test, f)
+    pickle.dump(lexicon_test, f)

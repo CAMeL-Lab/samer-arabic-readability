@@ -245,7 +245,6 @@ res_dev, model, dev_ids = run_experiment(model_checkpoint, frag_train['0'], frag
 res_test, _, test_ids = run_experiment(model_checkpoint, frag_train['0'], frag_test['0'], frag_dev['0'], freeze = False, weighted = False, n=1)
 
 def get_wordwise_results(results, ids_set):
-    wordwise_decisions = []
     frags = []
     for subwords, ids in zip(np.argmax(results['apt'], axis=2), ids_set):
         w = [0 for i in range(max([i for i in ids if not(i is None)])+1)]
@@ -254,7 +253,7 @@ def get_wordwise_results(results, ids_set):
             if not (ids[i] is None):
                 w[corresponding_word] = max(w[corresponding_word], x)
         frags.append(w)
-    return wordwise_decisions
+    return frags
     
 
 test_wordwise_decisions = get_wordwise_results(res_test, test_ids)

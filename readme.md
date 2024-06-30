@@ -7,8 +7,8 @@ This repository containes code and experiments to reproduce the results in our p
 The code for our experiments was written for Python >= 3.9, pytorch-lightning >= 2.2.2, transformers >= 4.35.2 and camel_tools >= 1.5.2. You can easily set up the environment using conda:
 
 ```
-conda create -n gec python=3.9
-conda activate gec
+conda create -n readability python=3.9
+conda activate readability
 
 pip install -r requirements.txt
 
@@ -16,7 +16,7 @@ pip install -r requirements.txt
 
 ```
 
-The frequency analysis side of our paper requires the the (CAMeL Tools datasets)[https://github.com/CAMeL-Lab/camel_tools]. The script above will download these resources for you.
+Our paper also requires the (CAMeL Tools datasets)[https://github.com/CAMeL-Lab/camel_tools]. The script above will download these resources for you.
 
 ### Experiments and Reproducibility
 
@@ -31,10 +31,11 @@ This repository is organized as follows:
 
 Our paper is organized in terms of *layered experiments* of different models. Therefore, we first prepare the data and individual models, and then combine them in the final experiments.
 
-We include three scripts to do this:
+We include two scripts to do this:
 1. `data_preparation/run_data_prep.sh` prepares all data needed.
 2. `models/train_and_test_models.sh` saves models and results on our dataset.
-3. ----- provides results for the different layered models.
+
+Then, run the `final_techniques.ipynb` notebook to see the comparisons between the layered techniques.
 
 ### License
 This repo is available under the MIT license.
