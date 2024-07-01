@@ -6,12 +6,11 @@ This repository contains code and experiments to reproduce the results in our pa
 
 The code for our experiments was written for Python >= 3.9, pytorch-lightning >= 2.2.2, transformers >= 4.29.0 and camel_tools >= 1.5.2. You can easily set up the environment using conda:
 
-```
+```bash
 conda create -n readability python=3.9
 conda activate readability
 
 pip install -r requirements.txt
-
 ```
 
 Our paper also requires the [CAMeL Tools datasets](https://github.com/CAMeL-Lab/camel_tools) for disambiguation. The script `data/setup_cameldata.sh` will set the datasets up for you.
