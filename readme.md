@@ -1,6 +1,6 @@
 # Strategies for Arabic Readability Modelling
 
-This repository containes code and experiments to reproduce the results in our paper Strategies for Arabic Readability Modelling.
+This repository contains code and experiments to reproduce the results in our paper Strategies for Arabic Readability Modelling.
 
 ### Requirements
 
@@ -14,7 +14,7 @@ pip install -r requirements.txt
 
 ```
 
-Our paper also requires the (CAMeL Tools datasets)[https://github.com/CAMeL-Lab/camel_tools] for disambiguation. The script `data/setup_cameldata.sh` will set the datasets up for you.
+Our paper also requires the [CAMeL Tools datasets](https://github.com/CAMeL-Lab/camel_tools) for disambiguation. The script `data/setup_cameldata.sh` will set the datasets up for you.
 
 ### Experiments and Reproducibility
 
@@ -23,7 +23,7 @@ This repository is organized as follows:
 - data_preparation: includes scripts to prepare the raw data.
 - models: includes scripts to train and evaluate all of our single models. These scripts save the models and output their decisions on the test and development sets of our dataset.
 - tuning_experiments: includes notebooks used in the development of the paper to tune certain parameters of the models used.
-- final_experiments: includes a Python notebook that visualizes all the results of our experiments.
+- final_experiments: includes notebooks that report on the results of our layered experiments.
 
 #### Reproducing our results
 
