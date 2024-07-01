@@ -2,7 +2,7 @@
 
 This repository contains code and experiments to reproduce the results in our paper Strategies for Arabic Readability Modelling.
 
-### Requirements
+## Requirements:
 
 The code for our experiments was written for Python >= 3.9, pytorch-lightning >= 2.2.2, transformers >= 4.29.0 and camel_tools >= 1.5.2. You can easily set up the environment using conda:
 
@@ -16,7 +16,7 @@ pip install -r requirements.txt
 
 Our paper also requires the [CAMeL Tools datasets](https://github.com/CAMeL-Lab/camel_tools) for disambiguation. The script `data/setup_cameldata.sh` will set the datasets up for you.
 
-### Experiments and Reproducibility
+## Experiments and Reproducibility:
 
 This repository is organized as follows:
 - data: includes all the data used throughout our paper to train and test different models.
@@ -35,10 +35,11 @@ We include two scripts to do this:
 
 Then, run the `final_techniques.ipynb` notebook to see the comparisons between the layered techniques.
 
-### License
-This repo is available under the MIT license.
+## License:
+This repo is available under the MIT license. See the [LICENSE](LICENSE) for more info.
 
-### Citation
+
+## Citation:
 If you find the code or data in this repo helpful, please cite our paper:
 
 
