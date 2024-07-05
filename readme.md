@@ -1,6 +1,6 @@
 # Strategies for Arabic Readability Modelling
 
-This repository contains code and experiments to reproduce the results in our paper Strategies for Arabic Readability Modelling.
+This repository contains code and experiments to reproduce the results in our paper [Strategies for Arabic Readability Modelling](https://arxiv.org/pdf/2407.03032).
 
 ## Requirements:
 
@@ -39,6 +39,19 @@ This repo is available under the MIT license. See the [LICENSE](LICENSE) for mor
 
 
 ## Citation:
-If you find the code or data in this repo helpful, please cite our [paper]():
+If you find the code or data in this repo helpful, please cite our [paper](https://arxiv.org/pdf/2407.03032):
 
-
+```BibTeX
+@inproceedings{liberato-etal-2024-strategies,
+    title = "Strategies for Arabic Readability Modeling",
+    author = "Pineros Liberato, Juan  and
+      Alhafni, Bashar and
+      Al Khalil, Muhamed  and
+      Habash, Nizar",
+    booktitle = "Proceedings of ArabicNLP 2024"
+    month = "aug",
+    year = "2024",
+    address = "Bangkok, Thailand",
+    abstract = "Automatic readability assessment is relevant to building NLP applications for education, content analysis, and accessibility. However, Arabic readability assessment is a challenging task due to Arabic's morphological richness and limited readability resources. In this paper, we present a set of experimental results on Arabic readability assessment using a diverse range of approaches, from rule-based methods to Arabic pretrained language models. We report our results on a newly created corpus at different textual granularity levels (words and sentence fragments). Our results show that combining different techniques yields the best results, achieving an overall macro F1 score of 86.7 at the word level and 87.9 at the fragment level on a blind test set. We make our code, data, and pretrained models publicly available.",
+}
+```
