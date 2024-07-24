@@ -4,7 +4,7 @@ import numpy as np
 import pandas as pd
 import pickle
 
-words_train = pd.read_csv('../../data/train_wordwise_clean.csv')
+words_train = pd.read_csv('../../data/words/train_wordwise_clean.csv')
 
 
 frag_dev = pd.read_csv('../../data/all_dev_aligned.csv')

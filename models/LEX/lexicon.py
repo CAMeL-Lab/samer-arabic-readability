@@ -18,11 +18,6 @@ bert_disambig._analyzer = S31_AN
 
 ## train data
 
-
-words_train = pd.read_csv('../../data/train_wordwise_clean.csv')
-words_dev = pd.read_csv('../../data/dev_wordwise_clean.csv')
-words_test = pd.read_csv('../../data/test_wordwise_clean.csv')
-
 ## testing data in fragments
 frag_train = pd.read_csv('../../data/all_train_aligned.csv')
 frag_dev = pd.read_csv('../../data/all_dev_aligned.csv')
