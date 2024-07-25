@@ -68,7 +68,7 @@ test_wds['split'] = 'test'
 
 wd_counts = pd.DataFrame([ train_wds, dev_wds, test_wds])
 
-wd_counts.set_index('split')
+wd_counts['sum'] = wd_counts.apply(lambda row: row['3'] + row['4'] + row['5'], axis=1) # Calculate row-wise sum of columns 3, 4, and 5
 sum_row = wd_counts.sum()
 sum_df = pd.DataFrame(sum_row).transpose()
 sum_df['split'] = 'Total'
