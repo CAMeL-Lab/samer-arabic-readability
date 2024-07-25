@@ -24,6 +24,20 @@ This repository is organized as follows:
 - tuning_experiments: includes notebooks used in the development of the paper to tune certain parameters of the models used.
 - final_experiments: includes notebooks that report on the results of our layered experiments.
 
+#### Data wrangling
+In order to produce the base data for our models, we:
+- take the word-by-word levelled data found in the SAMER Corpus
+- group it by punctuation-separated fragments of the form "word1#level word2#level ..."
+- delete trailing and leading punctuation per fragment
+
+This process is done in the `data_preparation/get_levelled_words.py` script.
+
+Before modelling and producing the statistics for our corpus, we:
+- delete any blank fragments leftover from the punctuation deletion process
+
+Summary data for our corpus can be generated using the `data_preparation/get_data_stats.py` script.
+
+
 #### Reproducing our results
 
 Our paper is organized in terms of *layered experiments* of different models. Therefore, we first prepare the data and individual models, and then combine them in the final experiments.

@@ -76,3 +76,4 @@ wd_counts = pd.concat([wd_counts, sum_df], ignore_index=True)
 
 wd_counts.to_csv('wd_counts.csv')
 
+print("Generated files: wd_counts.csv and fragment_counts.csv")
