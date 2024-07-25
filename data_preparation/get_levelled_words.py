@@ -37,6 +37,23 @@ all_dev_aligned = pd.DataFrame(all_dev_aligned)
 all_test_aligned = pd.DataFrame(all_test_aligned)
 all_train_aligned = pd.DataFrame(all_train_aligned)
 
+def prune_punctuation(fragment):
+  all = fragment.split(' ')
+  all = [a for a in all if not re.fullmatch(r'^[–•«»!,.:\u060C\u061B\u061F\u2026]+$', a.split('#')[0])]
+  if len(all) == 0:
+    return 'DELETEME'
+  else:
+    return ' '.join(all)
+
+def cleanse(df):
+  df[0] = df.apply(lambda row: prune_punctuation(row[0]), axis=1)
+  df = df[df[0] != 'DELETEME']
+  return df
+
+all_dev_aligned = cleanse(all_dev_aligned)
+all_train_aligned = cleanse(all_train_aligned)
+all_test_aligned = cleanse(all_test_aligned)
+
 # save
 
 base_path = '../data/'
